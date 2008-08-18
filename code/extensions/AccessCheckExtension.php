@@ -11,7 +11,7 @@ class AccessCheckExtension extends Extension {
 	 *
 	 * @return TRUE if user can access the CMS, FALSE to deny permission
 	 */
-	function accessCheck() {
+	function alternateAccessCheck() {
 		
 	}
 }
