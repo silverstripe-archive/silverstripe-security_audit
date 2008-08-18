@@ -33,6 +33,10 @@ class MemberAccessLoggingExtension extends DataObjectDecorator {
 		
 	}
 	
+	function loginFailed($data) {
+		
+	}
+	
 	/**
 	 * A user tried to log in as this member but provided the wrong password
 	 */
