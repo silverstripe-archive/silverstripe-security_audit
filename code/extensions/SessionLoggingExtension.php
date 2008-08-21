@@ -7,7 +7,7 @@ class SessionLoggingExtension extends DataObjectDecorator {
 	 * @param HTTPRequest $request
 	 */
 	function beforeInit($request) {
-		SessionLogEntry::start(Session::get_timeout());	
+		if(DB::isActive()) SessionLogEntry::start(Session::get_timeout());	
 	}
 	
 	/**
