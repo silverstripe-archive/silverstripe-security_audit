@@ -16,7 +16,7 @@ class AccessLogEntry extends DataObject {
 		$entry = Object::create('AccessLogEntry');
 		$entry->Message = $message;
 		$entry->IPAddress = $_SERVER['REMOTE_ADDR'];
-		$entry->URL = $_GET['url'];
+		$entry->URL = array_key_exists('url', $_GET) ? $_GET['url'] : $_SERVER['REQUEST_URI'];
 		if(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) $entry->ForwardedAddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
 		$entry->MemberID = $member ? $member->ID : Member::currentUserID();
 		$entry->write();
