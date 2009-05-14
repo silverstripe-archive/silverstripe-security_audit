@@ -1,5 +1,5 @@
 <?php
-class SessionLoggingExtension extends DataObjectDecorator {
+class SessionLoggingExtension extends Extension {
 	
 	/**
 	 * Before {@link Controller}::init is called
@@ -17,21 +17,6 @@ class SessionLoggingExtension extends DataObjectDecorator {
 	 */
 	function afterInit($request) {
 		
-	}
-	
-	/**
-	 * If a member logs in, the session stops and another is started
-	 */
-	function memberLoggedIn() {
-		SessionLogEntry::stop();
-		SessionLogEntry::start(Session::get_timeout());
-	}
-	
-	/**
-	 * Logging out also stops the session
-	 */
-	function memberLoggedOut() {
-		SessionLogEntry::stop();
 	}
 }
 ?>
